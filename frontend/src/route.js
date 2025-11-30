@@ -46,15 +46,11 @@ async function initProductPage() {
   const item = product.singleItem;
   if (!item) return;
 
-  comments.loadComments(item.id).then(()=>{
-    comments.initAddComment(item.id);
-    showItem(item,comments.getRatings(),comments.getAverageRating());
+  await comments.loadComments(item.id);
+  comments.initAddComment(item.id);
 
-  })
+  showItem(item, comments.getRatings(), comments.getAverageRating());
 
-  
-
-  
   const buyBtn = document.querySelector(".buy");
   if (!buyBtn) return;
 
@@ -66,19 +62,16 @@ async function initProductPage() {
     }
 
     try {
-      if(item.discountPercentage && item.discountPercentage > 10.0){
-        const price = Number((item.price*(1-item.discountPercentage/100)).toFixed(2));
-        await cart.addToCart(item.id, price, 1);
+      const price = item.discountPercentage && item.discountPercentage > 10
+        ? Number((item.price * (1 - item.discountPercentage / 100)).toFixed(2))
+        : item.price;
 
-      }else{
-        await cart.addToCart(item.id, item.price, 1);
-      }
+      await cart.addToCart(item.id, price, 1);
+      await cart.fetchCart(); 
+      updateCartQuantity();
     } catch (err) {
       console.error("Add to cart failed:", err);
-      return;
     }
-
-    cart.fetchCart().then(updateCartQuantity);
 
     buyBtn.disabled = true;
     buyBtn.textContent = "Added To Cart!";
@@ -88,6 +81,7 @@ async function initProductPage() {
     }, 3000);
   });
 }
+
 
 document.addEventListener("DOMContentLoaded",()=>{
   requireAuth();
