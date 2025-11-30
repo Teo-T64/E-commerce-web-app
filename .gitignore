@@ -12,6 +12,8 @@ build/
 .next/
 out/
 __pycache__/
+venv/
+fraud_service/venv/
 *.pyc
 *.pyo
 *.pyd
