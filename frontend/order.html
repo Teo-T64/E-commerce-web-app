@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/order.css">
+    <link rel="stylesheet" href="./styles/loader.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>Order Details</h2>
+        <div>
+            <a href="cart.html">
+                <button class="back">
+                    View Cart
+                </button>
+            </a>
+            <a href="index.html">
+                <button class="cancel">
+                    Cancel
+                </button>
+            </a>
+        </div>
+
+    </header>
+    <main>
+        <div class="cont">
+            <label>
+                Transaction Type:
+                <select id="transactionType">
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                </select>
+            </label>
+            <br/>
+            <label>
+                Location:
+                <select id="location">
+                    <option value="NorthAmerica">North America</option>
+                    <option value="SouthAmerica">South America</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="AustraliaOceania">Australia & Oceania</option>
+                </select>
+            </label>
+            <br/>
+            <label>
+                Channel:
+                <select id="channel">
+                    <option value="online">Online</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+            </label>
+            <br/>
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button id="place-order">Place Order</button>
+        </div>
+        <p id="order-status"></p>
+
+    </main>
+    <script type="module" src="./src/order.js"></script>
+
+</body>
+</html>

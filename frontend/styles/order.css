@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+
+    font-family: "Public Sans";
+}
+
+.cont {
+    display: grid;
+    place-items: center; 
+    text-align: center;
+    width: 35%;
+    height: 85%;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px grey;
+
+}
+
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    height: 100px;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0px 0px 5px grey;
+
+
+}
+header div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+main{
+    margin-top: 140px;
+    display: grid;
+    place-items: center; 
+    height: 50vh;
+}
+.cont label select{
+    width: 70%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+}
+
+header div a button{
+    padding: 12px;
+    border: 0.5px solid;
+    color: white;
+    border-radius: 10px;
+    background-color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+#place-order{
+    padding: 15px;
+    width: 70%;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+}
+.loading{
+    display: none;
+}
+
+#place-order:hover{
+    color: white;
+    background-color: black;
+}
+

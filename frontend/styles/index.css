@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+
+    font-family: "Public Sans";
+}
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    height: 100px;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0px 0px 5px grey;
+    z-index: 500;
+
+}
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.searchbar input{
+    width: 50%;
+    padding: 16px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 0.5px solid grey;
+    outline: none;
+}
+.searchbar button{
+    padding: 8px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 0.5px solid;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+main{
+    margin-top: 130px;
+
+}
+.acc-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+}
+.acc-details button{
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+#acc-btn{
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.acc-details a p{
+    position: absolute;
+    top:0%;
+    right: 15px;
+    background-color: grey;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+
+}
+.cont{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+
+}
+
+.product{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid grey;
+    border-radius: 10px;
+    transition: all 0.2s;
+
+}
+.product:hover{
+    box-shadow: 0px 0px 5px grey;
+    cursor: pointer;
+
+
+}
+.filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    text-align: center;
+}
+
+.filters section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+main select{
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+.price-before{
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+.discount{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 11px;
+    background-color: rgb(230, 45, 45);
+    color:white;
+    border-radius: 10px;
+    border: 2px solid rgb(230, 45, 45);
+
+
+
+}
+
+#filterProdType{
+    display: none;
+    z-index: 100;
+    background-color: white;
+    position: absolute;
+    right: 12%;
+    top: 22%;
+    border: 1px solid gray;
+    padding: 10px;
+
+
+}
+.filterBtn{
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+.filterType input[type = "checkbox"]{
+    cursor: pointer;
+
+}
+.filterType{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+@media screen and (max-width: 700px) {
+    .cont {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 500px) {
+    .cont {
+        grid-template-columns: repeat(1,1fr);
+    }
+}

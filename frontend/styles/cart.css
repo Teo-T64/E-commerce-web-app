@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+
+    font-family: "Public Sans";
+}
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    height: 100px;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0px 0px 5px grey;
+
+
+}
+header div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+
+}
+#acc-btn{
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.clear{
+    padding:12px;
+    font-size: 15px;
+    border-radius:15px;
+    width: 100px;
+    border: 1px solid;
+    color:white;
+    background-color: black;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+main{
+    margin-top: 130px;
+    display: grid;
+    grid-template-rows: 1fr 200px;
+}
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.searchbar input{
+    width: 50%;
+    padding: 16px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 0.5px solid grey;
+    outline: none;
+}
+.searchbar button{
+    padding: 8px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 0.5px solid;
+    color: white;
+    background-color: black;
+}
+
+.acc-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+}
+.acc-details button{
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+}
+
+.acc-details a p{
+    position: absolute;
+    top:0%;
+    right: 15px;
+    background-color: grey;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+
+}
+.cart-item{
+    width: 35vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 0.5px solid lightgrey;
+}
+.cont {
+  display: grid;
+  place-items: center; 
+
+}
+.plus{
+    color:white;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 1px solid;
+    padding: 5px;
+    width: 30px;
+    cursor: pointer;
+}
+.minus{
+    color:white;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 1px solid;
+    padding: 5px;
+    width: 30px;
+    cursor: pointer;
+}
+.minus:disabled{
+    opacity: 0.6;
+}
+.remove{
+    width: 70px;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total-cont{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    border-top: 1px solid grey;
+    background-color: white;
+
+
+}
+.total{
+    font-size: 25px;
+}
+
+.order{
+    padding: 25px;
+    width: 300px;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+}
+
+.order:not(:disabled):hover {
+    color: white;
+    background-color: black;
+}
+
+
+.home{
+    background-color: black;
+    color: white;
+    width: 110px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    
+}
+.home:hover{
+    opacity: 0.85;
+}
+
+.your-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
