@@ -179,6 +179,20 @@ main select{
     flex-direction: row;
     align-items: center;
 }
+
+.bubble {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-right: 4px;
+}
+
+.bubble.filled {
+  background: black;
+}
+
 @media screen and (max-width: 700px) {
     .cont {
         grid-template-columns: repeat(2,1fr);

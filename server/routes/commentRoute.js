@@ -42,17 +42,17 @@ router.get("/ratings", async (req, res) => {
 
     const formatted = result.map(r => ({
       productId: r._id,
-      avgRating: Number(r.avgRating.toFixed(1)),
+      avgRating: r.avgRating ? Number(r.avgRating.toFixed(1)) : 0,
       count: r.count
     }));
 
     res.json(formatted);
-
   } catch (err) {
     console.error("Rating fetch error:", err);
     res.status(500).json({ error: "Failed to fetch ratings" });
   }
 });
+
 
 
 router.get("/comments/:productId", async (req, res) => {
