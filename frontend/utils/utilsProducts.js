@@ -1,10 +1,12 @@
 import {Loader} from "./Loader.js"
+import { Comments } from "./utilsComments.js";
 
 export class Products {
   constructor() {
     this.products = [];
     this.singleItem = {};
     this.Loader = new Loader();
+    this.comments = new Comments();
   }
 
   async fetchProducts() {
@@ -50,9 +52,7 @@ export class Products {
   updateProducts() {
     const sortType = document.querySelector("#filterType").value;
 
-    const checked = [...document.querySelectorAll("#filterProdType input[type='checkbox']:checked")]
-                    .map(el => el.value);
-
+    const checked = [...document.querySelectorAll("#filterProdType input[type='checkbox']:checked")].map(el => el.value);
     let filtered = this.filterByCategory(checked);
 
     filtered = [...filtered]; 

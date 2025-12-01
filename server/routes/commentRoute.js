@@ -28,6 +28,32 @@ router.post("/comments", async (req, res) => {
   }
 });
 
+router.get("/ratings", async (req, res) => {
+  try {
+    const result = await Comment.aggregate([
+      {
+        $group: {
+          _id: "$productId",
+          avgRating: { $avg: "$rating" },
+          count: { $sum: 1 }
+        }
+      }
+    ]);
+
+    const formatted = result.map(r => ({
+      productId: r._id,
+      avgRating: Number(r.avgRating.toFixed(1)),
+      count: r.count
+    }));
+
+    res.json(formatted);
+
+  } catch (err) {
+    console.error("Rating fetch error:", err);
+    res.status(500).json({ error: "Failed to fetch ratings" });
+  }
+});
+
 
 router.get("/comments/:productId", async (req, res) => {
   try {

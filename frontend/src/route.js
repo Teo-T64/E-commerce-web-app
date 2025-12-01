@@ -5,7 +5,7 @@ import { requireAuth } from "../auth/authChecker.js";
 const cart = new Cart();
 const product = new Products();
 const comments = new Comments();
-function showItem(item,ratings,avgScore) {
+function showItem(item,comments) {
   const container = document.querySelector(".cont");
   if (!container) return;
 
@@ -23,8 +23,11 @@ function showItem(item,ratings,avgScore) {
           `<span class="discount-single">${item.discountPercentage.toFixed(0)}% Off</span>`
           : 
           " "}
-          <p>(${avgScore}),</p>
-          <p>( ${ratings} )</p>
+          <p>(${comments.getAverageRating()})</p>
+          <div class="stars-overall">
+            ${comments.createRatingCircles(comments.getAverageRating())}
+          </div>
+          <p>( ${comments.getRatings()} )</p>
         </div>
         <p class="desc-p">${item.description}</p>
         <button type="button" class="buy" data-item-id="${item.id}">Add To Cart</button>
@@ -47,9 +50,10 @@ async function initProductPage() {
   if (!item) return;
 
   await comments.loadComments(item.id);
+  comments.renderComments(item.id)
   comments.initAddComment(item.id);
 
-  showItem(item, comments.getRatings(), comments.getAverageRating());
+  showItem(item, comments);
 
   const buyBtn = document.querySelector(".buy");
   if (!buyBtn) return;
