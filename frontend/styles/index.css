@@ -179,7 +179,12 @@ main select{
     flex-direction: row;
     align-items: center;
 }
-
+.rating-prod{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .bubble {
   display: inline-block;
   width: 12px;
