@@ -45,17 +45,24 @@ document.addEventListener("DOMContentLoaded",()=>{
 
                     if (data.isFraudulent) {
                         orderStatus.textContent = `⚠️ Order blocked: Fraud detected! (Risk: ${data.riskScore.toFixed(2)})`;
-                        return;
+                        await cart.clearCart();
+                        loader.show();
+                        document.querySelector(".cont").style.display = "none"; 
+                        totalElement.textContent = "0.00";
+                        setTimeout(()=>{
+                            window.location.href = "index.html"
+                        },3000)
+                    }else{
+                        orderStatus.textContent = "✅ Order placed successfully. Thank you for your order!";
+                        await cart.clearCart();
+                        loader.show();
+                        document.querySelector(".cont").style.display = "none"; 
+                        totalElement.textContent = "0.00";
+                        setTimeout(()=>{
+                            window.location.href = "index.html"
+                        },3000)
                     }
 
-                    orderStatus.textContent = "✅ Order placed successfully. Thank you for your order!";
-                    await cart.clearCart();
-                    loader.show();
-                    document.querySelector(".cont").style.display = "none"; 
-                    totalElement.textContent = "0.00";
-                    setTimeout(()=>{
-                        window.location.href = "index.html"
-                    },3000)
 
                 } catch (err) {
                     console.error(err);

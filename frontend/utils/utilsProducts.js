@@ -85,6 +85,7 @@ export class Products {
     container.innerHTML = "";
 
     list.forEach((el) => {
+      const rating = this.comments.getProductRating(el.id); 
       let product_card = `
         <div class="product" data-item-id="${el.id}">
           <div class="img-holder">
@@ -96,6 +97,12 @@ export class Products {
           }
           <div class="description">
             <h1>${el.title}</h1>
+            <div class="rating-prod">
+              <section>
+                ${this.comments.createRatingCircles(rating.avg)}
+              </section>
+              <p>(${rating.count})</p>
+            </div>
             <p ${el.discountPercentage > 10 ? `class="price-before"` : ""}>€${el.price}</p>
             ${el.discountPercentage > 10
               ? `<p><b>€${(el.price * (1 - el.discountPercentage / 100)).toFixed(2)}</b></p>`
