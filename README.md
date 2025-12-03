@@ -42,27 +42,27 @@
 
 ## MongoDB storing
 ## Users collection: -stores registered users 
--_id: ObjectId
--email: String
--password: String(hashed)
--cart: Array 
--createdAt: Date
+- _id: ObjectId
+- email: String
+- password: String(hashed)
+- cart: Array 
+- createdAt: Date
 ## Orders collection: -stores orders made by users
--_id: ObjectId
--userId: ObjectId(reference to users)
--items: Array(consists of Object(productId: Number, quantity: Number,price:Number)) 
--totalAmount: Number
--paymentMethod: String
--shippingAddress: String
--status: String
--riskScore: Number exp.(0.005654)
--isFraudulent: Bool
--createdAt: Date
+- _id: ObjectId
+- userId: ObjectId(reference to users)
+- items: Array(consists of Object(productId: Number, quantity: Number,price:Number)) 
+- totalAmount: Number
+- paymentMethod: String
+- shippingAddress: String
+- status: String
+- riskScore: Number exp.(0.005654)
+- isFraudulent: Bool
+- createdAt: Date
 
 ## Commments collection: -stores comments made by users 
--_id: ObjectId
--userId: ObjectId(reference to users)
--productId: String
--content: String 
--createdAt: Date
+- _id: ObjectId
+- userId: ObjectId(reference to users)
+- productId: String
+- content: String 
+- createdAt: Date
 
