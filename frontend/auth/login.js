@@ -23,7 +23,21 @@ async function Login(){
 
 }
 
-document.getElementById("login-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    Login();
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("login-form");
+    const registerLink = document.getElementById("register-link");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            await Login();
+        });
+    }
+
+    if (registerLink) {
+        registerLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "register.html";
+        });
+    }
 });

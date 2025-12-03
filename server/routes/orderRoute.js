@@ -15,7 +15,7 @@ router.post("/create", verifyToken, async (req, res) => {
       TransactionType: orderData.TransactionType,
       Location: orderData.Location,
       Channel: orderData.Channel,
-      CustomerAge: 25,
+      CustomerAge: 28,
       CustomerOccupation: "engineer",
       TransactionDuration: 60,
       LoginAttempts: 2,

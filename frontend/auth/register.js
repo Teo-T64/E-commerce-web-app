@@ -27,8 +27,20 @@ async function Register(){
 
 }
 
-document.getElementById("register-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    Register();
+document.addEventListener("DOMContentLoaded", () => {
+    const registerForm = document.getElementById("register-form");
+    if (registerForm) {
+        registerForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            await Register();
+        });
+    }
 
+    const loginLink = document.getElementById("login-link");
+    if (loginLink) {
+        loginLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "login.html";
+        });
+    }
 });
