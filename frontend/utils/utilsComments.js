@@ -72,25 +72,6 @@ export class Comments {
     }
     return html;
   }
-  /*createRatingCircles(rating) {
-    let html = "";
-    for (let i = 1; i <= 5; i++) {
-      html += i <= rating
-        ? `<span class="bubble filled"></span>`
-        : `<span class="bubble"></span>`;
-    }
-    return html;
-  }
-  getAverageRating() {
-    if (!this.comments.length) return 0;
-    const sum = this.comments.reduce((a, c) => a + c.rating, 0);
-    return sum / this.comments.length;
-  }
-
-  getRatings() {
-    return this.comments.length;
-  }*/
-
 
   renderComments() {
     const container = document.getElementById("comments-list");
@@ -117,6 +98,36 @@ export class Comments {
       container.appendChild(div);
     });
   }
+  async userAlreadyCommented(productId) {
+    const token = localStorage.getItem("token");
+    if (!token) return false;
+
+    try {
+      const resUser = await fetch(`${this.apiUrl}/profile/me`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (!resUser.ok) return false;
+      const user = await resUser.json();
+
+      if (!this.comments.length) {
+        await this.loadComments(productId);
+      }
+
+      console.log("Checking comments:", this.comments);
+      console.log("User ID:", user._id);
+
+      return this.comments.some(c => 
+        String(c.user.id) === String(user._id)
+      );
+
+    } catch (err) {
+      console.error("Error checking user comment:", err);
+      return false;
+    }
+  }
+
+
 
 
   initAddComment(productId) {

@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                     const data = await res.json();
 
                     if (data.isFraudulent) {
-                        orderStatus.textContent = `⚠️ Order blocked: Fraud detected! (Risk: ${data.riskScore.toFixed(2)})`;
+                        orderStatus.textContent = `⚠️ Order blocked: Fraud detected! (Risk: ${data.riskScore.toFixed(2)}) Returning to Home...`;
                         await cart.clearCart();
                         loader.show();
                         document.querySelector(".cont").style.display = "none"; 
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                             window.location.href = "index.html"
                         },3000)
                     }else{
-                        orderStatus.textContent = "✅ Order placed successfully. Thank you for your order!";
+                        orderStatus.textContent = "✅ Order placed successfully. Thank you for your order! Returning to Home...";
                         await cart.clearCart();
                         loader.show();
                         document.querySelector(".cont").style.display = "none"; 

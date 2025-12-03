@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
     document.querySelector(".total").innerHTML = `Total:   € ${(cart.total).toFixed(2)}`;
 
-    document.querySelector(".clear").addEventListener("click",()=>{
+    document.querySelector(".clear").addEventListener("click",async()=>{
       if(cart.cartItems.length > 0){
-        cart.clearCart().then(()=>{
-          displayCart();
-
-        })
+        cart.Loader.show();              
+        await cart.clearCart();
+        await displayCart();
+        cart.Loader.hide();
       }
     })
     if (cart.cartItems.length === 0) {

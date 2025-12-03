@@ -50,10 +50,27 @@ async function initProductPage() {
   if (!item) return;
 
   await comments.loadComments(item.id);
-  comments.renderComments(item.id)
-  comments.initAddComment(item.id);
 
   showItem(item, comments);
+  comments.renderComments(item.id);
+
+  const already = await comments.userAlreadyCommented(item.id);
+  console.log(already)
+  const submitBtn = document.querySelector(".post");
+  const commentInput = document.getElementById("comment-input");
+  const ratingInputs = document.querySelectorAll("input[name='rating']");
+
+  if (already) {
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "You already commented";
+      submitBtn.classList.add("disabled-btn");
+    }
+    if (commentInput) commentInput.disabled = true;
+    ratingInputs.forEach(r => r.disabled = true);
+  } else {
+    comments.initAddComment(item.id);
+  }
 
   const buyBtn = document.querySelector(".buy");
   if (!buyBtn) return;
@@ -71,7 +88,7 @@ async function initProductPage() {
         : item.price;
 
       await cart.addToCart(item.id, price, 1);
-      await cart.fetchCart(); 
+      await cart.fetchCart();
       updateCartQuantity();
     } catch (err) {
       console.error("Add to cart failed:", err);
@@ -85,6 +102,8 @@ async function initProductPage() {
     }, 3000);
   });
 }
+
+
 
 
 document.addEventListener("DOMContentLoaded",()=>{

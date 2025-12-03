@@ -66,9 +66,12 @@ main{
     display: none;
 }
 #orderList{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap:10px;
+  max-height: 580px;       
+  overflow-y: auto;        
+  padding-right: 10px;    
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
 }
 .home{
     background-color: black;

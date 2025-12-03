@@ -16,8 +16,14 @@ async function Register(){
     const data = await res.json();
     if (res.ok) {
         localStorage.setItem("token", data.token);
-        window.location.href = "login.html";
-    } 
+        document.querySelector(".registration-res").textContent = "Registration successful! Redirecting to Login...";
+        setTimeout(()=>{
+            window.location.href = "login.html";
+        },2000)
+    }else{
+        document.querySelector(".registration-res").textContent = "User already exists";
+
+    }
 
 }
 

@@ -13,9 +13,12 @@ async function Login(){
     if (res.ok) {
         localStorage.setItem("token", data.token);
         window.location.href = "index.html"; 
+        document.querySelector(".login-res").textContent = " ";
+
     } else {
         console.log(data.error);
-        
+        document.querySelector(".login-res").textContent = "Invalid password or e-mail.";
+
     }
 
 }
