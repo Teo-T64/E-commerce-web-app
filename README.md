@@ -2,7 +2,7 @@
 
 ## Features
 - User authentication: **Login & Register** using JWT
-- Secure password storage with bycrypt
+- Secure password storage and hashing with bycrypt
 - Frontend built with **HTML, CSS, JavaScript**
 - Backend API using **Node.js / Express** and **Flask** for fraud detection model
 - Data storage with **MongoDB**
