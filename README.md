@@ -183,5 +183,3 @@ This table provides a comprehensive reference for the main API endpoints managed
 - Adding an admin dashboard for managing orders, products and comments.
 - Adding product endpoints and replacing current dummy.json product data source.
 - Implement advanced payment system (Stripe) instead of the current dummy system.
-| `/productInfo/ratings` | `GET` | **Fetch aggregate ratings for all products.** | None | Uses MongoDB Aggregation to calculate `avgRating` and `count` per product. |
-| `/productInfo/comments/:productId` | `GET` | Fetch all comments for a **specific product**. | None | Populates user email for comment author display. |
