@@ -180,7 +180,7 @@ export class Comments {
         document.querySelector("input[name='rating']:checked").checked = false;
 
         await this.loadComments(productId);
-        this.renderComments();
+        location.reload();
       } catch (error) {
         console.error("Error posting comment:", error);
       }
