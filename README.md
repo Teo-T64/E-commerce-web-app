@@ -169,7 +169,6 @@ This table provides a comprehensive reference for the main API endpoints managed
 | :--- | :--- | :--- | :--- | :--- |
 | `/order/create` | `POST` | **Place a new order.** | **User Token** | **Triggers API call to Flask for Fraud Risk Score.** |
 | `/order/my-orders` | `GET` | Retrieve all orders for the current user. | **User Token** | |
-| `/order/:id/status` | `PUT` | Update the shipping/processing status of an order. | **Admin Token** | *(Future implementation)* |
 
 ---
 
