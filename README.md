@@ -118,7 +118,7 @@ The project utilizes a microservices-inspired approach to decouple the core e-co
 ### Setting up the project
 1. Clone the repo
 git clone <https://github.com/Teo-T64/E-commerce-web-app.git>
-cd <your-project-directory>
+cd your-project-directory
 3. Python folder setup
 cd fraud_service
 python3 -m venv venv - create virtual environment for the project 
