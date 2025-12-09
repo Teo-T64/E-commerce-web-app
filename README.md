@@ -117,23 +117,23 @@ The project utilizes a microservices-inspired approach to decouple the core e-co
 `
 ### Setting up the project
 1. Clone the repo
-git clone <https://github.com/Teo-T64/E-commerce-web-app.git>
-cd your-project-directory
+`git clone <https://github.com/Teo-T64/E-commerce-web-app.git>`
+`cd your-project-directory`
 3. Python folder setup
-cd fraud_service
-python3 -m venv venv - create virtual environment for the project 
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-pip install -r requirements.txt - install needed libraries for the model
+`cd fraud_service`
+`python3 -m venv venv` - create virtual environment for the project 
+`source venv/bin/activate`  # On Windows, use: `venv\Scripts\activate`
+`pip install -r requirements.txt` - install needed libraries for the model
 4. Create Node backend
-cd ../ (if needed)
-cd server
-npm install
+`cd ../` (if needed)
+`cd server`
+`npm install`
 5. Create an .env file containing:
 PORT (for Node backend)
 MONGO_URI = Your mongoDB cluster link
 JWT_SECRET
 6. Start Node server
-npm run dev
+`npm run dev`
 ### Endpoints in project
 ## 🔗 E-Commerce Webshop API Endpoints Reference
 
